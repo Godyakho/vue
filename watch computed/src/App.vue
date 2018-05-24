@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Compare />  
+    <a href="mailto:email">xxx</a>
   </div>
 </template>
 
