@@ -1,11 +1,10 @@
-function Dep() {
-    this.subs = []
-}
-
-Dep.prototype = {
+class Dep {
+    constructor(){
+        this.subs = []
+    }
     addsub(sub) {
         this.subs.push(sub)
-    },
+    }
     notify() {
         this.subs.forEach(sub => {
             sub.update()
