@@ -19,11 +19,13 @@ class complier{
     _complier(node) {
         var self = this
         if(node.nodeType === 1) {
-            var key = node.attributes['v-model'].nodeValue
-            node.addEventListener('input',function(e){
-                self.vm[key] = e.target.value
-            })
-            node.value = this.vm[key]
+            if(node.attributes.hasOwnProperty('v-model')) {
+                var key = node.attributes['v-model'].nodeValue
+                node.addEventListener('input',function(e){
+                    self.vm[key] = e.target.value
+                })
+                node.value = this.vm[key]
+            }       
         }
         if(node.nodeType === 3) {
            if(reg.test(node.nodeValue)){

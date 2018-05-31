@@ -173,6 +173,7 @@ class godVue {
 //         })
 //     });
 // }
+// 改为es6
 class observer{
     constructor(data){
       this.data = data
@@ -202,7 +203,6 @@ class observer{
         })
     }
 }
-__WEBPACK_IMPORTED_MODULE_0__Dep__["a" /* default */].target = null;
 /* harmony default export */ __webpack_exports__["a"] = (observer);
 
 
@@ -236,11 +236,13 @@ class complier{
     _complier(node) {
         var self = this
         if(node.nodeType === 1) {
-            var key = node.attributes['v-model'].nodeValue
-            node.addEventListener('input',function(e){
-                self.vm[key] = e.target.value
-            })
-            node.value = this.vm[key]
+            if(node.attributes.hasOwnProperty('v-model')) {
+                var key = node.attributes['v-model'].nodeValue
+                node.addEventListener('input',function(e){
+                    self.vm[key] = e.target.value
+                })
+                node.value = this.vm[key]
+            }       
         }
         if(node.nodeType === 3) {
            if(reg.test(node.nodeValue)){
