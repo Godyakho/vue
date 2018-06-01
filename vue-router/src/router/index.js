@@ -32,8 +32,17 @@ export default new Router({
       redirect: '/redirect'
     },
     {
-      path: '/redirect',
+      path: '/redirect/:id',  // redirect/xxx
+      // props: true, // 可以把id 作为props 传到 component
+      // props: {
+      //   id: '2341'
+      // },
+      props: (route) =>({
+        id: route.query
+        // xxx/redirect/123?a=1&b=3
+      }),
       component: Redirect,
+      name: 'redirect',
       // 路由守卫里操作meta
       meta: {
         title: '这是默认页',

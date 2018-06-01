@@ -1,7 +1,7 @@
 {
-  "name": "props",
+  "name": "vue-router",
   "version": "1.0.0",
-  "description": "props about vue",
+  "description": "vue-router about vue",
   "author": "yanghao <j.work@qq.com>",
   "private": true,
   "scripts": {

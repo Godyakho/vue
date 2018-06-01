@@ -6,6 +6,8 @@
     <router-link to="/Aa/Test">to Aa/test</router-link>
     <br>
     <router-link to="/Bb">to Bb</router-link>
+    <br>
+    <router-link to="/redirect/123?a=1&b=2">to redirect</router-link>
   </div>
 </template>
 

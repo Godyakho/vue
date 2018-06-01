@@ -1,6 +1,6 @@
-# props
+# vue-router
 
-> props about vue
+> vue-router about vue
 
 ## Build Setup
 
