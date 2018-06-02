@@ -6,7 +6,7 @@ Vue.use(Router)
 
 import Redirect from '@/components/redirect'
 import Aa from '@/components/a'
-import Bb from '@/components/b'
+// import Bb from '@/components/b'
 import Test from '@/components/test'
 
 export default new Router({
@@ -50,8 +50,13 @@ export default new Router({
       }
     },
     {
-      path: '/Aa',
+      path: '/Aa/:count',
+      name: 'Aa',
       component: Aa,
+      beforeEnter(to, from,next) {
+        console.log( 'Aa router 路由钩子 beforeEnter')
+        next()
+      }
     },
     {
       path: '/Aa/test',
@@ -59,7 +64,7 @@ export default new Router({
     },
     {
       path: '/Bb',
-      component: Bb,
+      component:() => import('@/components/b'),
       // 子路由
       children: [
         {

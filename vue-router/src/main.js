@@ -8,13 +8,16 @@ import router from './router'
 Vue.config.productionTip = false
 
 // 全局router 钩子
+
 router.beforeEach((to, from ,next) => {
   // 进行数据校验,判断是否是登陆状态
-  if(to.fullPath === '/Aa') {
-    next({path:'/redirect'})
-  }
+  // if(to.fullPath === '/Aa') {
+  //   next({path:'/Bb'})
+  // } else {
+  //   next()
+  // }
   console.log('全局 beforeEach')
-  // next()
+  next()
 })
 
 router.beforeResolve((to,from,next) => {

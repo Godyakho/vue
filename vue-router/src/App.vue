@@ -2,7 +2,8 @@
   <div id="app">
    <h1>Title: this is App.vue</h1>  
     <router-view />
-    <router-link to="/Aa">to Aa</router-link>
+    <router-link to="/Aa/123">to Aa/123</router-link>
+    <router-link to="/Aa/456">to Aa/456</router-link>  
     <router-link to="/Aa/Test">to Aa/test</router-link>
     <br>
     <router-link to="/Bb">to Bb</router-link>
