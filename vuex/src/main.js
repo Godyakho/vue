@@ -9,7 +9,6 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
-const createStore = store()
 
 Vue.config.productionTip = false
 
@@ -17,7 +16,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
-  createStore,
+  store,
   components: { App },
   template: '<App/>'
 })
