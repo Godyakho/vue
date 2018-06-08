@@ -1,4 +1,6 @@
 Vue.js 的源码都在 src 目录下，其目录结构如下。
+
+```
 src
 ├── compiler        # 编译相关 
 ├── core            # 核心代码 
@@ -6,6 +8,7 @@ src
 ├── server          # 服务端渲染
 ├── sfc             # .vue 文件解析
 ├── shared          # 共享代码
+```
 
 compiler
 compiler 目录包含 Vue.js 所有编译相关的代码。它包括把模板解析成 ast 语法树，ast 语法树优化，代码生成等功能。
