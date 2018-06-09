@@ -59,7 +59,7 @@ build(builds)
 function build (builds) {
   let built = 0
   const total = builds.length
-  // 一个一个编译执行 buildEntry,next递归
+  // 一个一个编译执行 buildEntry,next递归
   const next = () => {
     buildEntry(builds[built]).then(() => {
       built++
@@ -76,7 +76,7 @@ function buildEntry (config) {
   const output = config.output
   const { file, banner } = output
   const isProd = /min\.js$/.test(file)
-  // 把处理过的配置传入rollup.rollup,从而完成构建
+  // 把处理过的配置传入rollup.rollup,从而完成构建
   return rollup.rollup(config)
     .then(bundle => bundle.generate(output))
     .then(({ code }) => {
@@ -111,7 +111,7 @@ const banner =
 const aliases = require('./alias')
 const resolve = p => {
   const base = p.split('/')[0]
-  // 在scripts/alias.js 里找 / 前匹配的目录,做映射
+  // 在scripts/alias.js 里找 / 前匹配的目录,做映射
   // alias.js 的地址为项目里真实的地址
   if (aliases[base]) {
     return path.resolve(aliases[base], p.slice(base.length + 1))
@@ -167,7 +167,7 @@ const builds = {
     banner
   },
 
-  ······
+  ······
 
 }
 
